@@ -1,0 +1,47 @@
+import socket
+import os.path
+import sys
+    
+def get_host(host):
+    """Requests user to input host address as either an IPv4 or the host name
+    which will be returned as an IP address"""
+    try:        
+        return socket.gethostbyname(host)   
+    except socket.error as e:
+        raise Exception("Invalid host entered!")   
+
+def get_port(port_number):
+    port_number = int(port_number)
+    if port_number < 1024 or port_number > 64000:
+        raise Exception("Invalid port number entered (must be between 1024 and 64000 inclusive)")
+    else:
+        return port_number
+    
+def check_file(file):
+    if os.path.exists(file):
+        raise Exception("This file already exists on your computer!")
+    
+def create_socket():
+    try:
+        return socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    except socket.error as e:
+        raise Exception("failed to create socket")    
+
+def connect_socket(client, host, port):
+    try:
+        client.connect((host, port))
+    except socket.error as e:
+        client.close()
+        raise Exception("Failed to connect to server")
+
+       
+def main():
+    if len(sys.argv) < 3:
+        raise Exception("Too few parameters at run time (Host, Port and File required)")    
+    host = get_host(sys.argv[1])
+    port = get_port(sys.argv[2])
+    check_file(sys.argv[3])
+    socket = create_socket()
+    connect_socket(socket, host, port)
+    
+main()

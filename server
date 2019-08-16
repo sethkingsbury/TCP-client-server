@@ -1,0 +1,44 @@
+import socket
+from datetime import datetime
+
+now = datetime.now()
+dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+
+def create_socket(host, port):
+    
+    if port < 1024 or port > 64000:
+        raise Exception("invalid port number")
+    
+    try:
+        server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    except socket.error as e:
+        raise Exception("failed to create socket")
+    
+    try:
+        server.bind((host, port))
+    except socket.error as e:
+        raise Exception("failed to bind socket")
+    
+    return server
+
+
+def run_server(server_socket):
+    
+    try:
+        server_socket.listen(1)
+    except socket.error as e:
+        raise Exception("Failed to begin listening")
+    
+    print("Listening...")
+    
+    while True:
+        client_socket, address = server_socket.accept()
+        print(f"Connection from {address} has been established!\nPort number: {client_socket.getsockname()[1]}\nTime Received: {dt_string}")
+    
+def main():
+    port = 1234
+    host = '127.0.0.1'
+    server = create_socket(host, port)
+    run_server(server)
+    
+main()

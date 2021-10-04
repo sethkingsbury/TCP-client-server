@@ -1,0 +1,40 @@
+WELDING-Wire
+      M.I.G.(Metal Inert Gas) - Points to Remember
+
+      1. Mig (GMAW) welding is often referred to
+         by the manufacturer's trade name as Micro-wire,
+         Aircomatic, Sigma, and Millermatic Welding.
+
+      2. Mig welding is faster than stick electrode
+         welding and is much easier to learn.
+
+      3. Spray transfer type of welding is particu-
+         larly adapted for welding heavy gage metals.
+
+      4. Short circuiting transfer welding is best
+         for welding light gage metals.
+
+      5. For optimum efficiency, DCRP current is
+         required for Mig welding.
+
+      6. For  Mig  welding, a constant  potentiaI
+         power supply with a nearly flat volt-ampere char-
+         acteristic produces the best results.
+
+      7. As a general rule, an air-cooled gun  is
+         satisfactory  when  welding  with  amperage
+         around 200 and a water-cooled gun for welding
+         heavy metals requiring higher amperages.
+
+      8. The use of CO2 as a shielding gas is most
+         effective and less expensive when welding steel.
+
+      9. Argon or a mixture of argon and oxygen
+         will produce the most effective results in welding
+         aluminum and stainless steel.
+
+     10. The rate of gas flow for welding most
+         metals is approximately 35 cu ft/hr. However,
+         this rate may have to be varied somewhat, de-
+         pending on the type, electrode size, and thick-
+         ness of metal.
